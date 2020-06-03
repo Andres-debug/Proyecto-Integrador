@@ -5,8 +5,12 @@
  */
 package physicslab;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import model.Usuario;
 
 /**
  *
@@ -38,8 +42,8 @@ public class Login extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        Usua = new javax.swing.JTextField();
-        pass = new javax.swing.JPasswordField();
+        txtUsua = new javax.swing.JTextField();
+        txtPass = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabelRegistro = new javax.swing.JLabel();
@@ -77,7 +81,7 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel3.setBackground(new java.awt.Color(44, 62, 80));
@@ -91,13 +95,13 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(236, 240, 241));
         jLabel3.setText("Usuario:");
 
-        Usua.setBackground(new java.awt.Color(108, 122, 137));
-        Usua.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Usua.setForeground(new java.awt.Color(228, 241, 254));
+        txtUsua.setBackground(new java.awt.Color(108, 122, 137));
+        txtUsua.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtUsua.setForeground(new java.awt.Color(228, 241, 254));
 
-        pass.setBackground(new java.awt.Color(108, 122, 137));
-        pass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        pass.setForeground(new java.awt.Color(228, 241, 254));
+        txtPass.setBackground(new java.awt.Color(108, 122, 137));
+        txtPass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtPass.setForeground(new java.awt.Color(228, 241, 254));
 
         jButton1.setBackground(new java.awt.Color(192, 57, 43));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -121,7 +125,7 @@ public class Login extends javax.swing.JFrame {
 
         jLabelRegistro.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRegistro.setText("            Clic aqui para crear cuenta nueva");
-        jLabelRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelRegistro.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelRegistro.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelRegistroMouseClicked(evt);
@@ -141,8 +145,8 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Usua, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtUsua, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addGap(91, 91, 91)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -158,12 +162,12 @@ public class Login extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Usua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtUsua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -182,7 +186,7 @@ public class Login extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -199,28 +203,28 @@ public class Login extends javax.swing.JFrame {
         String usuario = "Andres";
         String contraseña = "2020";
 
-        if (Usua.getText().equals(usuario) && pass.getText().equals(contraseña)) {
+        if (txtUsua.getText().equals(usuario) && txtPass.getText().equals(contraseña)) {
             VenEjercicio ventana = new VenEjercicio();
             ventana.setVisible(true);
             this.dispose();
-        } else if (Usua.getText().equals("") && pass.getText().equals("")) {
+        } else if (txtUsua.getText().equals("") && txtPass.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Usuario y/o Contraseña estan vacios\nIngrese los por favor.");
-            Usua.setFocusable(true);
-        } else if (Usua.getText().equals("")) {
+            txtUsua.setFocusable(true);
+        } else if (txtUsua.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Usuario está vacio\nIngrese  por favor.");
-            Usua.setFocusable(true);
-        } else if (pass.getText().equals("")) {
+            txtUsua.setFocusable(true);
+        } else if (txtPass.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "Contraseña está vacio\nIngrese lo por favor.");
-            pass.setFocusable(true);
-        } else if (Usua.getText().compareTo(usuario) != 0 && pass.getText().compareTo(contraseña) != 0) {
+            txtPass.setFocusable(true);
+        } else if (txtUsua.getText().compareTo(usuario) != 0 && txtPass.getText().compareTo(contraseña) != 0) {
             JOptionPane.showMessageDialog(this, "Usuario y/o Contraseña no válidos\nIngrese nuevamente.");
-            Usua.setFocusable(true);
-        } else if (Usua.getText().compareTo(usuario) != 0) {
+            txtUsua.setFocusable(true);
+        } else if (txtUsua.getText().compareTo(usuario) != 0) {
             JOptionPane.showMessageDialog(this, "Usuario no válido\nIngrese nuevamente.");
-            Usua.setFocusable(true);
-        } else if (pass.getText().compareTo(contraseña) != 0) {
+            txtUsua.setFocusable(true);
+        } else if (txtPass.getText().compareTo(contraseña) != 0) {
             JOptionPane.showMessageDialog(this, "Contraseña no válida\nIngrese nuevamente.");
-            pass.setFocusable(true);
+            txtPass.setFocusable(true);
     }//GEN-LAST:event_jButton2ActionPerformed
     }
     private void jLabelRegistroMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRegistroMouseClicked
@@ -232,9 +236,28 @@ public class Login extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jLabelRegistroMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    public String consultarUsuario(Connection conexion, Usuario user) throws SQLException {
+        String mensaje = null;
+        Usuario usuario = new Usuario();
+        String usuario1 = txtUsua.getText();
+        String password = String.valueOf(txtPass.getPassword());
+        try {
+
+            PreparedStatement consulta = conexion.prepareStatement("select * from user where user='"+usuario1+"'and password='"+password+"'");
+            
+            boolean resultado = consulta.execute();
+            
+            if (resultado) {
+                mensaje = "usuario regisgtrado exitosamente";
+            } else {
+                mensaje = "no se pudo registar el usuario";
+            }
+        } catch (SQLException ex) {
+            throw new SQLException(ex);
+        }
+        // return null;
+        return mensaje;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -268,7 +291,6 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Usua;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -278,6 +300,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPasswordField pass;
+    private javax.swing.JPasswordField txtPass;
+    private javax.swing.JTextField txtUsua;
     // End of variables declaration//GEN-END:variables
 }

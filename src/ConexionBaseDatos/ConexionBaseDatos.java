@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 public class ConexionBaseDatos {
     
-    public  Connection cnx = null;
+    private static Connection cnx = null;
     
-   public  Connection obtener() throws SQLException, ClassNotFoundException {
+   public static Connection obtener() throws SQLException, ClassNotFoundException {
       if (cnx == null) {
          try {
             Class.forName("com.mysql.jdbc.Driver");

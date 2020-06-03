@@ -5,7 +5,15 @@
  */
 package physicslab;
 
+import ConexionBaseDatos.ConexionBaseDatos;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import model.Usuario;
 
 /**
  *
@@ -35,17 +43,17 @@ public class Registro extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        Usua1 = new javax.swing.JTextField();
-        pass1 = new javax.swing.JPasswordField();
+        txtUsuario = new javax.swing.JTextField();
+        txtPass = new javax.swing.JPasswordField();
         jButton3 = new javax.swing.JButton();
         BotRegistar = new javax.swing.JButton();
         jLabelRegistro1 = new javax.swing.JLabel();
-        Usua2 = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        Usua3 = new javax.swing.JTextField();
+        txtApellido = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        pass2 = new javax.swing.JPasswordField();
+        txtPass2 = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -89,20 +97,20 @@ public class Registro extends javax.swing.JFrame {
         jLabel8.setText("Usuario:");
         jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 131, -1, -1));
 
-        Usua1.setBackground(new java.awt.Color(108, 122, 137));
-        Usua1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Usua1.setForeground(new java.awt.Color(228, 241, 254));
-        Usua1.addActionListener(new java.awt.event.ActionListener() {
+        txtUsuario.setBackground(new java.awt.Color(108, 122, 137));
+        txtUsuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtUsuario.setForeground(new java.awt.Color(228, 241, 254));
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Usua1ActionPerformed(evt);
+                txtUsuarioActionPerformed(evt);
             }
         });
-        jPanel6.add(Usua1, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 132, 225, -1));
+        jPanel6.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 132, 225, -1));
 
-        pass1.setBackground(new java.awt.Color(108, 122, 137));
-        pass1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        pass1.setForeground(new java.awt.Color(228, 241, 254));
-        jPanel6.add(pass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 174, 225, -1));
+        txtPass.setBackground(new java.awt.Color(108, 122, 137));
+        txtPass.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtPass.setForeground(new java.awt.Color(228, 241, 254));
+        jPanel6.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 174, 225, -1));
 
         jButton3.setBackground(new java.awt.Color(192, 57, 43));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -128,7 +136,7 @@ public class Registro extends javax.swing.JFrame {
 
         jLabelRegistro1.setForeground(new java.awt.Color(255, 255, 255));
         jLabelRegistro1.setText("                                  Clic aqui para hacer Log In");
-        jLabelRegistro1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelRegistro1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabelRegistro1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelRegistro1MouseClicked(evt);
@@ -136,15 +144,15 @@ public class Registro extends javax.swing.JFrame {
         });
         jPanel6.add(jLabelRegistro1, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 337, 344, -1));
 
-        Usua2.setBackground(new java.awt.Color(108, 122, 137));
-        Usua2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Usua2.setForeground(new java.awt.Color(228, 241, 254));
-        Usua2.addActionListener(new java.awt.event.ActionListener() {
+        txtNombre.setBackground(new java.awt.Color(108, 122, 137));
+        txtNombre.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(228, 241, 254));
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Usua2ActionPerformed(evt);
+                txtNombreActionPerformed(evt);
             }
         });
-        jPanel6.add(Usua2, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 48, 225, -1));
+        jPanel6.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 48, 225, -1));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(236, 240, 241));
@@ -156,38 +164,38 @@ public class Registro extends javax.swing.JFrame {
         jLabel10.setText("Apellido:");
         jPanel6.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 89, -1, -1));
 
-        Usua3.setBackground(new java.awt.Color(108, 122, 137));
-        Usua3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        Usua3.setForeground(new java.awt.Color(228, 241, 254));
-        Usua3.addActionListener(new java.awt.event.ActionListener() {
+        txtApellido.setBackground(new java.awt.Color(108, 122, 137));
+        txtApellido.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtApellido.setForeground(new java.awt.Color(228, 241, 254));
+        txtApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Usua3ActionPerformed(evt);
+                txtApellidoActionPerformed(evt);
             }
         });
-        jPanel6.add(Usua3, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 90, 225, -1));
+        jPanel6.add(txtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 90, 225, -1));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(236, 240, 241));
         jLabel11.setText("Confirmar:");
         jPanel6.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 215, -1, -1));
 
-        pass2.setBackground(new java.awt.Color(108, 122, 137));
-        pass2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        pass2.setForeground(new java.awt.Color(228, 241, 254));
-        jPanel6.add(pass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 216, 225, -1));
+        txtPass2.setBackground(new java.awt.Color(108, 122, 137));
+        txtPass2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        txtPass2.setForeground(new java.awt.Color(228, 241, 254));
+        jPanel6.add(txtPass2, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 216, 225, -1));
 
         getContentPane().add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 410, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Usua3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Usua3ActionPerformed
+    private void txtApellidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtApellidoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Usua3ActionPerformed
+    }//GEN-LAST:event_txtApellidoActionPerformed
 
-    private void Usua2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Usua2ActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Usua2ActionPerformed
+    }//GEN-LAST:event_txtNombreActionPerformed
 
     private void jLabelRegistro1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelRegistro1MouseClicked
         Login Log = new Login();
@@ -199,20 +207,52 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabelRegistro1MouseClicked
 
     private void BotRegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotRegistarActionPerformed
-        // TODO add your handling code here:
+        Usuario usuario = new Usuario();
+        usuario.setNombre(txtNombre.getText());
+        usuario.setApellido(txtApellido.getText());
+        usuario.setUsuario(txtUsuario.getText());
+        usuario.setPassword(txtPass.getText());
+        try {
+            registrarUsuario(ConexionBaseDatos.obtener(),usuario);
+        
+        } catch (SQLException ex) {
+            Logger.getLogger(PhysicsLab.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(PhysicsLab.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_BotRegistarActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void Usua1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Usua1ActionPerformed
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Usua1ActionPerformed
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+     public String registrarUsuario(Connection conexion, Usuario user) throws SQLException {
+        String mensaje = null;
+        try {
+
+            PreparedStatement consulta = conexion.prepareStatement("INSERT INTO user (user_name,user_lastname,user,password) values(?,?,?,?)");
+            consulta.setString(1, user.getNombre());
+            consulta.setString(2, user.getApellido());
+            consulta.setString(3, user.getUsuario());
+            consulta.setString(4, user.getPassword());
+            
+            boolean resultado = consulta.execute();
+            
+            if (resultado) {
+                mensaje = "usuario regisgtrado exitosamente";
+            } else {
+                mensaje = "no se pudo registar el usuario";
+            }
+        } catch (SQLException ex) {
+            throw new SQLException(ex);
+        }
+        // return null;
+        return mensaje;
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -247,26 +287,20 @@ public class Registro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotRegistar;
-    private javax.swing.JTextField Usua1;
-    private javax.swing.JTextField Usua2;
-    private javax.swing.JTextField Usua3;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelRegistro1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPasswordField pass1;
-    private javax.swing.JPasswordField pass2;
+    private javax.swing.JTextField txtApellido;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JPasswordField txtPass;
+    private javax.swing.JPasswordField txtPass2;
+    private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 }
