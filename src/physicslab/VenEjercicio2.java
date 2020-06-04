@@ -5,8 +5,6 @@
  */
 package physicslab;
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Jowen
@@ -30,6 +28,7 @@ public class VenEjercicio2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        ButtonRespuesta = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         ResVelocidad = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -42,10 +41,21 @@ public class VenEjercicio2 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        ButtonRespuesta = new javax.swing.JButton();
+        ButtonCalculadora = new javax.swing.JButton();
+        ButtonAyuda = new javax.swing.JButton();
+        ButtonDetenerM = new javax.swing.JButton();
+        ButtonMovimiento = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(534, 1084));
+
+        ButtonRespuesta.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ButtonRespuesta.setText("Guardar solucion");
+        ButtonRespuesta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ButtonRespuesta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonRespuestaActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
         jLabel1.setText("   Velocidad:");
@@ -84,12 +94,39 @@ public class VenEjercicio2 extends javax.swing.JFrame {
         jTextArea1.setText("\n\n\n\n");
         jScrollPane1.setViewportView(jTextArea1);
 
-        ButtonRespuesta.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        ButtonRespuesta.setText("Guardar solucion");
-        ButtonRespuesta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        ButtonRespuesta.addActionListener(new java.awt.event.ActionListener() {
+        ButtonCalculadora.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ButtonCalculadora.setText("Calculadora");
+        ButtonCalculadora.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ButtonCalculadora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonRespuestaActionPerformed(evt);
+                ButtonCalculadoraActionPerformed(evt);
+            }
+        });
+
+        ButtonAyuda.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ButtonAyuda.setText("Ayuda?");
+        ButtonAyuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ButtonAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonAyudaActionPerformed(evt);
+            }
+        });
+
+        ButtonDetenerM.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ButtonDetenerM.setText("Detener Caida");
+        ButtonDetenerM.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ButtonDetenerM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonDetenerMActionPerformed(evt);
+            }
+        });
+
+        ButtonMovimiento.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        ButtonMovimiento.setText("Iniciar Caida");
+        ButtonMovimiento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ButtonMovimiento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonMovimientoActionPerformed(evt);
             }
         });
 
@@ -98,70 +135,92 @@ public class VenEjercicio2 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(876, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(ButtonRespuesta)
-                        .addGap(50, 50, 50))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(ResVelocidad, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel7))
+                                .addComponent(ResVelocidad, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(ResTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(ResTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(ResDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(27, 27, 27))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(77, 77, 77))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ResDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(jLabel4)))
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(ButtonMovimiento)
+                .addGap(76, 76, 76)
+                .addComponent(ButtonDetenerM)
+                .addGap(76, 76, 76)
+                .addComponent(ButtonAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(80, 80, 80)
+                .addComponent(ButtonCalculadora)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
+                .addComponent(ButtonRespuesta)
+                .addGap(40, 40, 40))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ResVelocidad, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4))
-                    .addComponent(ResTiempo))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ResDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(ButtonRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ButtonMovimiento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonDetenerM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonAyuda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(ButtonCalculadora, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonRespuesta, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ResVelocidad, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ResTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ResDistancia, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(66, 66, 66)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 106, Short.MAX_VALUE)))
+                .addGap(25, 25, 25))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonRespuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRespuestaActionPerformed
+
+       
+
+    }//GEN-LAST:event_ButtonRespuestaActionPerformed
 
     private void ResTiempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResTiempoActionPerformed
         // TODO add your handling code here:
@@ -171,14 +230,22 @@ public class VenEjercicio2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ResDistanciaActionPerformed
 
-    private void ButtonRespuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRespuestaActionPerformed
-        if(Float.parseFloat(ResVelocidad.getText())==0){
-            JOptionPane.showMessageDialog(null, "respuesta correcta, siguiente Ejercicio en proceso*");
-        }else{
-            JOptionPane.showMessageDialog(null, "respuesta incorrecta*");
-        }
+    private void ButtonCalculadoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCalculadoraActionPerformed
+  VenCalculadora ventana = new VenCalculadora();
+  ventana.setVisible(true);        
+    }//GEN-LAST:event_ButtonCalculadoraActionPerformed
 
-    }//GEN-LAST:event_ButtonRespuestaActionPerformed
+    private void ButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAyudaActionPerformed
+       
+    }//GEN-LAST:event_ButtonAyudaActionPerformed
+
+    private void ButtonDetenerMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDetenerMActionPerformed
+      
+    }//GEN-LAST:event_ButtonDetenerMActionPerformed
+
+    private void ButtonMovimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMovimientoActionPerformed
+        
+    }//GEN-LAST:event_ButtonMovimientoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -206,6 +273,7 @@ public class VenEjercicio2 extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(VenEjercicio2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -216,6 +284,10 @@ public class VenEjercicio2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonAyuda;
+    private javax.swing.JButton ButtonCalculadora;
+    private javax.swing.JButton ButtonDetenerM;
+    private javax.swing.JButton ButtonMovimiento;
     private javax.swing.JButton ButtonRespuesta;
     private javax.swing.JTextField ResDistancia;
     private javax.swing.JTextField ResTiempo;
