@@ -3,10 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Jowen/Documents/Proyecto-Integrador1/Proyecto-Integrador/src/physicslab/VenEjercicio.java</file>
             <file>file:/C:/Users/Jowen/Documents/Proyecto-Integrador1/Proyecto-Integrador/src/physicslab/Login.java</file>
             <file>file:/C:/Users/Jowen/Documents/Proyecto-Integrador1/Proyecto-Integrador/src/physicslab/VenEjercicio2.java</file>
             <file>file:/C:/Users/Jowen/Documents/Proyecto-Integrador1/Proyecto-Integrador/src/physicslab/formula.java</file>
+=======
+            <file>file:/C:/Users/andre/Documents/Universidad/Proyecto%20integrador/Proyecto-Integrador/src/physicslab/VenEjercicio.java</file>
+            <file>file:/C:/Users/andre/Documents/Universidad/Proyecto%20integrador/Proyecto-Integrador/src/ConexionBaseDatos/ConexionBaseDatos.java</file>
+            <file>file:/C:/Users/andre/Documents/Universidad/Proyecto%20integrador/Proyecto-Integrador/src/physicslab/Registro.java</file>
+            <file>file:/C:/Users/andre/Documents/Universidad/Proyecto%20integrador/Proyecto-Integrador/src/physicslab/Login.java</file>
+>>>>>>> develop
         </group>
     </open-files>
 </project-private>
