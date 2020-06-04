@@ -24,7 +24,7 @@ public class VenEjercicio extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         
         ImageIcon Img_Mov;
-        Img_Mov = new ImageIcon(getClass().getResource("/Imagenes/Movimiento.png"));
+        Img_Mov = new ImageIcon(getClass().getResource("/Imagenes/Carro.jpeg"));
         Icon Icono_Mov = new ImageIcon(Img_Mov.getImage().getScaledInstance(LabelImagen.getWidth(),LabelImagen.getHeight(), Image.SCALE_DEFAULT)); 
         LabelImagen.setIcon(Icono_Mov);
     }
@@ -60,7 +60,7 @@ public class VenEjercicio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(70, 70, 121));
 
-        LabelImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Movimiento.png"))); // NOI18N
+        LabelImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Carro.jpeg"))); // NOI18N
 
         ButtonMovimiento.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         ButtonMovimiento.setText("Iniciar movimiento");
@@ -81,10 +81,10 @@ public class VenEjercicio extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jLabel1.setText("   Velocidad:");
+        jLabel1.setText("  Velocidad?");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jLabel2.setText("Tiempo:");
+        jLabel2.setText("Tiempo?");
 
         ResTiempo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,7 +93,7 @@ public class VenEjercicio extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jLabel3.setText("Distancia:");
+        jLabel3.setText("Distancia?");
 
         ResDistancia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,14 +245,14 @@ public class VenEjercicio extends javax.swing.JFrame {
 
     private void ButtonDetenerMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDetenerMActionPerformed
         ImageIcon Img_Mov;
-        Img_Mov = new ImageIcon(getClass().getResource("/Imagenes/Movimiento.png"));
+        Img_Mov = new ImageIcon(getClass().getResource("/Imagenes/Carro.jpeg"));
         Icon Icono_Mov = new ImageIcon(Img_Mov.getImage().getScaledInstance(LabelImagen.getWidth(),LabelImagen.getHeight(), Image.SCALE_DEFAULT)); 
         LabelImagen.setIcon(Icono_Mov);
     }//GEN-LAST:event_ButtonDetenerMActionPerformed
 
     private void ButtonMovimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMovimientoActionPerformed
        ImageIcon Img_Mov;
-       Img_Mov = new ImageIcon(getClass().getResource("/Imagenes/GifM.gif"));
+       Img_Mov = new ImageIcon(getClass().getResource("/Imagenes/Carro.gif"));
        Icon Icono_Mov = new ImageIcon(Img_Mov.getImage().getScaledInstance(LabelImagen.getWidth(),LabelImagen.getHeight(), Image.SCALE_DEFAULT)); 
        LabelImagen.setIcon(Icono_Mov);
     }//GEN-LAST:event_ButtonMovimientoActionPerformed

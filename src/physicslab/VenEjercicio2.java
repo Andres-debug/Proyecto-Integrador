@@ -26,7 +26,7 @@ public class VenEjercicio2 extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         
         ImageIcon Img_Mov;
-        Img_Mov = new ImageIcon(getClass().getResource("/Imagenes/Niña.jpeg"));
+        Img_Mov = new ImageIcon(getClass().getResource("/Imagenes/pelota.jpeg"));
         Icon Icono_Mov = new ImageIcon(Img_Mov.getImage().getScaledInstance(LabelImagen.getWidth(),LabelImagen.getHeight(), Image.SCALE_DEFAULT)); 
         LabelImagen.setIcon(Icono_Mov);
     }
@@ -71,12 +71,12 @@ public class VenEjercicio2 extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jLabel1.setText("   Velocidad:");
+        jLabel1.setText("  Velocidad?");
 
         jLabel7.setText("(m/s)");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jLabel2.setText("Tiempo:");
+        jLabel2.setText("Tiempo?");
 
         ResAltura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,7 +87,7 @@ public class VenEjercicio2 extends javax.swing.JFrame {
         jLabel6.setText("(s)");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
-        jLabel3.setText("Altura:");
+        jLabel3.setText(" Altura?");
 
         jLabel5.setText("(m)");
 
@@ -137,7 +137,7 @@ public class VenEjercicio2 extends javax.swing.JFrame {
             }
         });
 
-        LabelImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Niña.jpeg"))); // NOI18N
+        LabelImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pelota.jpeg"))); // NOI18N
 
         ResTiempo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -149,32 +149,40 @@ public class VenEjercicio2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(564, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(100, 100, 100))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(ButtonCaida)
-                .addGap(39, 39, 39)
-                .addComponent(ButtonDetenerC)
-                .addGap(34, 34, 34)
-                .addComponent(ButtonAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(ButtonCalculadora)
-                .addGap(37, 37, 37)
-                .addComponent(ButtonRespuesta)
-                .addContainerGap(68, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(LabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(ButtonCaida)
+                        .addGap(39, 39, 39)
+                        .addComponent(ButtonDetenerC)
+                        .addGap(34, 34, 34)
+                        .addComponent(ButtonAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(ButtonCalculadora)
+                        .addGap(37, 37, 37)
+                        .addComponent(ButtonRespuesta))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(79, 79, 79)
+                                .addGap(73, 73, 73)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(ResVelocidad, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel7))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(82, 82, 82)
+                                .addGap(76, 76, 76)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -188,26 +196,13 @@ public class VenEjercicio2 extends javax.swing.JFrame {
                                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGap(16, 16, 16)
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(100, 100, 100))))))
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(LabelImagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -228,7 +223,10 @@ public class VenEjercicio2 extends javax.swing.JFrame {
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)))
+                        .addGap(55, 55, 55))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelImagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ButtonDetenerC, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonCaida, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -280,14 +278,14 @@ public class VenEjercicio2 extends javax.swing.JFrame {
 
     private void ButtonDetenerCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDetenerCActionPerformed
  ImageIcon Img_Mov;
-        Img_Mov = new ImageIcon(getClass().getResource("/Imagenes/Niña.jpeg"));
+        Img_Mov = new ImageIcon(getClass().getResource("/Imagenes/pelota.jpeg"));
         Icon Icono_Mov = new ImageIcon(Img_Mov.getImage().getScaledInstance(LabelImagen.getWidth(),LabelImagen.getHeight(), Image.SCALE_DEFAULT)); 
         LabelImagen.setIcon(Icono_Mov);      
     }//GEN-LAST:event_ButtonDetenerCActionPerformed
 
     private void ButtonCaidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonCaidaActionPerformed
 ImageIcon Img_Mov;
-       Img_Mov = new ImageIcon(getClass().getResource("/Imagenes/Niña.gif"));
+       Img_Mov = new ImageIcon(getClass().getResource("/Imagenes/pelota.gif"));
        Icon Icono_Mov = new ImageIcon(Img_Mov.getImage().getScaledInstance(LabelImagen.getWidth(),LabelImagen.getHeight(), Image.SCALE_DEFAULT)); 
        LabelImagen.setIcon(Icono_Mov);        
     }//GEN-LAST:event_ButtonCaidaActionPerformed
