@@ -273,7 +273,8 @@ public class VenEjercicio2 extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonCalculadoraActionPerformed
 
     private void ButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAyudaActionPerformed
-       
+          formula ventana = new formula();
+          ventana.setVisible(true);       
     }//GEN-LAST:event_ButtonAyudaActionPerformed
 
     private void ButtonDetenerCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDetenerCActionPerformed
