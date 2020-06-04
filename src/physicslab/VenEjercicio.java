@@ -16,8 +16,9 @@ import javax.swing.JOptionPane;
  * @author Jowen
  */
 public class VenEjercicio extends javax.swing.JFrame {
-   
-   Integer puntaje;
+    Integer error=1;
+    Integer auxiliar =100;
+    Integer puntaje=0;
     public VenEjercicio() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -116,7 +117,7 @@ public class VenEjercicio extends javax.swing.JFrame {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("\n\nCalcular la velocidad \nde un vehiculo que se \ndesplaza (100) metros \nen (5) segundos\n\n\n");
+        jTextArea1.setText("\n\nCalcular la velocidad \nde un vehiculo que se \ndesplaza (100) metros \nen (5) segundos.\n\n\n");
         jScrollPane1.setViewportView(jTextArea1);
 
         ButtonCalculadora.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -283,10 +284,11 @@ public class VenEjercicio extends javax.swing.JFrame {
 
     private void ButtonRespuestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRespuestaActionPerformed
         
-        if(Float.parseFloat(ResVelocidad.getText())==20){
-           puntaje=100;
-          
-          JOptionPane.showMessageDialog(null, "respuesta correcta,tu puntaje es: ("+puntaje+ ")"); 
+       if(Float.parseFloat(ResVelocidad.getText())==20){
+           
+           
+           puntaje= auxiliar;
+          JOptionPane.showMessageDialog(null, "respuesta correcta,tu puntaje es: ("+auxiliar+ ")"); 
           
           VenEjercicio2 ventana = new VenEjercicio2();
           ventana.setVisible(true); 
@@ -295,9 +297,11 @@ public class VenEjercicio extends javax.swing.JFrame {
         
           
         }else{
+           puntaje= auxiliar;
            JOptionPane.showMessageDialog(null, "respuesta incorrecta*");
-           Integer i=10;
-           puntaje = 100 -i;
+           
+            auxiliar = 100 -error*10 ;
+           error ++;
         }
    
     }//GEN-LAST:event_ButtonRespuestaActionPerformed

@@ -258,7 +258,7 @@
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="&#xa;&#xa;Calcular la velocidad &#xa;de un vehiculo que se &#xa;desplaza (100) metros &#xa;en (5) segundos&#xa;&#xa;&#xa;"/>
+            <Property name="text" type="java.lang.String" value="&#xa;&#xa;Calcular la velocidad &#xa;de un vehiculo que se &#xa;desplaza (100) metros &#xa;en (5) segundos.&#xa;&#xa;&#xa;"/>
           </Properties>
         </Component>
       </SubComponents>
